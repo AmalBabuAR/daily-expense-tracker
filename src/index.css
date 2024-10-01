@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+body {
+  overflow: hidden;
+}
+
+.sizeCheck {
+  @apply bg-gray-500 sm:bg-yellow-500 md:bg-blue-500 lg:bg-green-500 xl:bg-red-500;
+}
+
+.divCenter {
+  @apply flex justify-center items-center;
+}
+
+.loginAndSigninBg {
+  @apply bg-violet-800  w-screen h-screen flex justify-center items-center;
+}
+
+.signinSection {
+  @apply bg-white w-[80vw] h-[90vh]  md:w-[80vw] md:h-[80vh] lg:w-[70vw] rounded-2xl;
+}
+
+.loginSection {
+  @apply bg-white  w-[80vw] h-[90vh] sm:w-[90vw] sm:h-[80vh] md:w-[80vw] md:h-[80vh] lg:w-[70vw] lg:h-[70vh] rounded-2xl;
+}
+
+.form-group {
+  @apply flex flex-col gap-[3px];
+}
+
+.signBtn {
+  @apply bg-primary text-white font-bold rounded-md mt-2 h-10 flex justify-center items-center gap-3 hover:bg-primaryHover;
+}
+
+.googleBtn {
+  @apply flex justify-center items-center rounded-md border w-[70%] sm:w-[60%] h-10 gap-5;
+}
+
+.incomeSection {
+  @apply flex flex-col justify-center items-center bg-secondaryGreen py-3 sm:py-4 md:py-5 px-4 sm:px-7 md:px-10 gap-[10px] sm:gap-5 md:gap-6 rounded-[30px]  sm:rounded-[30px] md:rounded-[40px];
+}
+
+.expenseSection {
+  @apply flex flex-col justify-center items-center  bg-secondaryRed py-3 sm:py-4 md:py-5 px-4 sm:px-7 md:px-10 gap-[10px] sm:gap-5 md:gap-6 rounded-[30px]  sm:rounded-[30px] md:rounded-[40px];
+}
+
+.icomeButton {
+  @apply w-full sm:w-full text-[14px] sm:text-[14px] md:text-[16px] py-[4px] sm:py-[6px] md:py-2 rounded-2xl font-medium bg-white text-secondaryGreen hover:bg-selectTextHover;
+}
+
+.expenseButton {
+  @apply w-full sm:w-full text-[14px] sm:text-[14px] md:text-[16px] py-[4px] sm:py-[6px] md:py-2 rounded-2xl font-medium bg-white hover:bg-selectTextHover text-secondaryRed;
+}
+
+.sortBtn {
+  @apply px-[18px]  sm:px-[18px] md:px-6 py-[3px]  sm:py-[3px] md:py-2 lg:px-8 lg:py-2  sm:text-[12px] md:text-sm font-medium text-base bg-white   hover:bg-gray-100 hover:text-primary tracking-wider;
+}
+
+.sortBtnClicked {
+  @apply px-[18px] sm:px-[18px] md:px-6 py-[3px]  sm:py-[3px] md:py-2 lg:px-8 lg:py-2
+   sm:text-[12px] md:text-sm font-bold text-selectText bg-selectTextHover rounded-3xl tracking-wider;
+}
+
+.modelFormOverlayer {
+  @apply absolute top-0 bottom-0 left-0 right-0 m-auto flex justify-center items-center;
+}
+
+.modal {
+  @apply w-[80vw] h-auto sm:w-[60vw] md:w-[50vw] lg:w-[35vw] xl:w-[30vw] 2xl:w-[30vw]  bg-white  rounded-2xl;
+}
+
+.aiModel {
+  @apply w-[90vw] md:w-[60vw] h-auto bg-white rounded-2xl;
+}
+
+.modelFormOverlayerBg {
+  background-color: rgba(0, 0, 0, 0.864);
+}
+
+.modelHead {
+  @apply flex items-center justify-between px-10 py-3 text-white font-semibold  rounded-t-2xl;
+}
+
+.modelInput {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-[80%] p-2.5;
+}
+
+.modelInput::placeholder {
+  @apply text-black text-sm;
+}
+
+label {
+  @apply text-[13px];
+}
+
+input::placeholder {
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+@layer utilities {
+  .formInput {
+    @apply border-slate-400 pl-[5px] border-[2px] rounded-md h-8;
+  }
+
+  .formInputError {
+    @apply border-red-700 pl-[5px] border-[2px] rounded-md h-8;
+  }
+}
