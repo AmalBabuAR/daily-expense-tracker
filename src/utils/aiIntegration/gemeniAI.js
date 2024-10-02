@@ -1,10 +1,9 @@
 import axios from "axios";
-import { apiKey } from "./apiKey";
 
 export const generateAIReport = async (incomeData, expenseData) => {
   let prompt = "";
   if (incomeData.length === 0 && expenseData.length === 0) {
-     prompt = `suggeste how can I improve my income and expense. give me the steps to get the income on and where to spend `;
+    prompt = `suggeste how can I improve my income and expense. give me the steps to get the income on and where to spend `;
   } else if (incomeData.length !== 0 && expenseData.length === 0) {
     prompt = `
     Analyze the following income data and provide suggestions 
@@ -63,7 +62,9 @@ export const generateAIReport = async (incomeData, expenseData) => {
   }
   try {
     const response = await axios({
-      url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`,
+      url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${
+        import.meta.env.VITE_GEMINI_API_KEY
+      }`,
       method: "post",
       data: { contents: [{ parts: [{ text: prompt }] }] },
     });
